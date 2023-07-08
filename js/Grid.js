@@ -7,6 +7,8 @@ class Grid {
         this.cellSize = cellSize;
 
         this.grid = [];
+
+        this.targetColour = -1;
     }
 
     createGrid() {
@@ -54,6 +56,7 @@ class Grid {
 
         for (let i = 0; i < targets.length; i++) {
             if (this.gridContains(targets[i].shape)) {
+                this.targetColour = targets[i].colour;
                 targets[i].newShape();
                 return true;
             }
@@ -121,7 +124,7 @@ class Grid {
                 if (this.grid[i][j].selected) {
                     this.grid[i][j].selected = false;
                     this.grid[i][j].dead = true;
-                    fallingCells.push(new FallingCell(this.grid[i][j].xPos, this.grid[i][j].yPos, this.cellSize));
+                    fallingCells.push(new FallingCell(this.grid[i][j].xPos, this.grid[i][j].yPos, this.cellSize, this.targetColour));
                 }
             }
         }
@@ -151,6 +154,21 @@ class Grid {
                     return true;
                 }
             }
+        }
+    }
+
+    updateScore() {
+
+        let actualScore = 0;
+
+        for (let i = 0; i < this.w; i++) {
+            for (let j = 0; j < this.h; j++) {
+                if (!this.grid[i][j].dead) actualScore++;
+            }
+        }
+
+        if (score == -1 || actualScore < score) {
+            score = actualScore;
         }
     }
 

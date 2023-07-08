@@ -1,10 +1,11 @@
 class FallingCell {
 
-    constructor(x, y, cellSize) {
+    constructor(x, y, cellSize, colour) {
 
         this.x = x;
         this.y = y;
         this.cellSize = cellSize;
+        this.colour = colour;
     }
 
     update() {
@@ -27,7 +28,13 @@ class FallingCell {
         push();
         translate(this.x, this.y);
 
-        ellipse(0, 0, this.cellSize);
+        fill(this.colour);
+        stroke(0, 0, 0, 50);
+
+        rect(0, 0, this.cellSize, this.cellSize);
+        line(-this.cellSize/2, -this.cellSize/2, this.cellSize/2, this.cellSize/2)
+        line(-this.cellSize/2, this.cellSize/2, this.cellSize/2, -this.cellSize/2)
+        rect(0, 0, this.cellSize/2, this.cellSize/2);
 
         pop();
     }

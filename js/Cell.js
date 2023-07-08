@@ -31,10 +31,15 @@ class Cell {
         push();
         translate(this.x*this.cellSize, this.y*this.cellSize);
 
-        if (this.selected) fill(255);
-        else fill(150);
+        if (this.selected) fill(palette.white);
+        else fill(palette.mid);
 
-        ellipse(0, 0, this.cellSize);
+        stroke(palette.light);
+
+        rect(0, 0, this.cellSize, this.cellSize);
+        line(-this.cellSize/2, -this.cellSize/2, this.cellSize/2, this.cellSize/2)
+        line(-this.cellSize/2, this.cellSize/2, this.cellSize/2, -this.cellSize/2)
+        rect(0, 0, this.cellSize/2, this.cellSize/2);
 
         pop();
     }

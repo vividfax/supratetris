@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-    color: #fff;
+    background-color: #242331;
+    color: #DDCA7D;
 }
 
 canvas {
@@ -28,12 +28,12 @@ button {
     border-radius: 50px;
     border: none;
     font-size: 1.2rem;
-    color: #333;
-    background-color: #fff;
+    color: #242331;
+    background-color: #B88B4A;
     z-index: 1;
 }
 
 button:hover {
-    color: #fff;
-    background-color: #000;
+    color: #242331;
+    background-color: #DDCA7D;
 }
