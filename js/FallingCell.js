@@ -9,7 +9,7 @@ class FallingCell {
 
     update() {
 
-        this.y += 3;
+        this.y += 1;
 
         if (this.y-this.cellSize > height) {
             this.destruct();
