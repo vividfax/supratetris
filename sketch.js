@@ -271,6 +271,7 @@ function setupButtons() {
     let buttonX = width/2-400-120;
     let buttonY = height/2-265;
     respinButton.style("transform", "translate("+buttonX+"px,"+buttonY+"px)");
+    respinButton.style("display", "inline");
     respinButton.mousePressed(respin);
 }
 

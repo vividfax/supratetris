@@ -42,9 +42,21 @@ button {
     font-size: 30px;
     padding-bottom: 55px;
     z-index: 1;
+    display: none;
 }
 
 button:hover {
     color: #242331;
     background-color: #DDCA7D;
+}
+
+#p5_loading {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-family: "Darumadrop One", sans-serif;
+    color: #DDCA7D;
 }
