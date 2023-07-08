@@ -28,13 +28,7 @@ class FallingCell {
         push();
         translate(this.x, this.y);
 
-        fill(this.colour);
-        stroke(0, 0, 0, 50);
-
-        rect(0, 0, this.cellSize, this.cellSize);
-        line(-this.cellSize/2, -this.cellSize/2, this.cellSize/2, this.cellSize/2)
-        line(-this.cellSize/2, this.cellSize/2, this.cellSize/2, -this.cellSize/2)
-        rect(0, 0, this.cellSize/2, this.cellSize/2);
+        image(this.colour, 0, 0, 40, 40);
 
         pop();
     }

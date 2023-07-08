@@ -199,10 +199,10 @@ class Grid {
         translate(-this.cellSize*this.w/2, -this.cellSize*this.h/2);
 
         fill(palette.blacker);
-        strokeWeight(this.cellSize/2);
-        stroke(palette.blacker);
+        strokeWeight(5);
+        stroke(palette.blackest);
         rectMode(CORNER);
-        rect(0, 0, this.w*this.cellSize, height, 1);
+        rect(-this.cellSize/2, -this.cellSize/2, this.w*this.cellSize+this.cellSize, height, 40);
         rectMode(CENTER);
         strokeWeight(1);
 

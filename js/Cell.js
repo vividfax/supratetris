@@ -31,15 +31,8 @@ class Cell {
         push();
         translate(this.x*this.cellSize, this.y*this.cellSize);
 
-        if (this.selected) fill(palette.white);
-        else fill(palette.mid);
-
-        stroke(palette.light);
-
-        rect(0, 0, this.cellSize, this.cellSize);
-        line(-this.cellSize/2, -this.cellSize/2, this.cellSize/2, this.cellSize/2)
-        line(-this.cellSize/2, this.cellSize/2, this.cellSize/2, -this.cellSize/2)
-        rect(0, 0, this.cellSize/2, this.cellSize/2);
+        if (this.selected) image(images.tile.selected, 0, 0, 40, 40);
+        else image(images.tile.deselected, 0, 0, 40, 40);
 
         pop();
     }
