@@ -6,6 +6,7 @@ let palette = {
     "mid": "#A27035",
     "dark": "#533E2D",
     "black": "#242331",
+    "blacker": "#1B1924",
 }
 
 let grid;

@@ -178,6 +178,16 @@ class Grid {
         translate(width/2, height/2);
         translate(-this.cellSize*this.w/2, -this.cellSize*this.h/2);
 
+        fill(palette.blacker);
+        strokeWeight(this.cellSize/2);
+        stroke(palette.blacker);
+        rectMode(CORNER);
+        rect(0, 0, this.w*this.cellSize, height, 1);
+        rectMode(CENTER);
+        strokeWeight(1);
+
+        translate(this.cellSize/2, this.cellSize/2);
+
         for (let i = 0; i < this.w; i++) {
             for (let j = 0; j < this.h; j++) {
                 this.grid[i][j].display();

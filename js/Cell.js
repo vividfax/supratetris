@@ -6,8 +6,8 @@ class Cell {
         this.y = y;
         this.cellSize = cellSize;
 
-        this.xPos = this.x*this.cellSize + width/2 - this.cellSize*grid.w/2;
-        this.yPos = this.y*this.cellSize + height/2 - this.cellSize*grid.h/2;
+        this.xPos = this.x*this.cellSize + width/2 - this.cellSize*grid.w/2 + this.cellSize/2;
+        this.yPos = this.y*this.cellSize + height/2 - this.cellSize*grid.h/2 + this.cellSize/2;
 
         this.dead = false;
         this.selected = false;
