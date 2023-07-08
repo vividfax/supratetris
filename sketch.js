@@ -114,4 +114,5 @@ function respin() {
         targets[i].newShape();
     }
     grid.addNewRow();
+    grid.clearSelected();
 }
