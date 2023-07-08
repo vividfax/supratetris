@@ -8,7 +8,25 @@ function setup() {
 
     createCanvas(windowWidth, windowHeight);
 
+    setupButtons();
     newGame();
+}
+
+function setupButtons() {
+
+    let respinButton = select("#respin-button");
+    respinButton.mousePressed(respin);
+}
+
+function newGame() {
+
+    grid = new Grid(10, 14, cellSize);
+    grid.createGrid();
+    targets = [];
+
+    for (let i = 0; i < 3; i++) {
+        targets.push(new Target(cellSize, i));
+    }
 }
 
 function draw() {
@@ -57,19 +75,15 @@ function mousePressed() {
 
 function keyPressed() {
 
+    if (key == "R" || key == "r") {
+        respin();
+    }
+}
+
+function respin() {
+
     for (let i = 0; i < targets.length; i++) {
         targets[i].newShape();
     }
     grid.addNewRow();
-}
-
-function newGame() {
-
-    grid = new Grid(10, 12, cellSize);
-    grid.createGrid();
-    targets = [];
-
-    for (let i = 0; i < 3; i++) {
-        targets.push(new Target(cellSize, i));
-    }
 }

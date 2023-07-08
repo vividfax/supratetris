@@ -157,7 +157,7 @@ class Target {
     display() {
 
         push();
-        translate(50, 50);
+        translate(50, 150);
         translate(0, this.num*200);
 
         for (let i = 0; i < this.shape.length; i++) {
