@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #252627;
+    color: #F2EFE9;
+    /* font-family: "Oxanium", sans-serif; */
+}
+
+canvas {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
