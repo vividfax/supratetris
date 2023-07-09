@@ -76,8 +76,8 @@ function preload() {
         sounds.deselectBlock.push(new Audio("./sounds/deselect-block.wav"));
     }
 
-    // sounds.music = new Audio("./sounds/fudge-music.ogg");
-    // sounds.music.loop = true;
+    sounds.music = new Audio("./sounds/music.ogg");
+    sounds.music.loop = true;
 }
 
 function setup() {

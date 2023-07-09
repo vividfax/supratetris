@@ -169,7 +169,7 @@ class Grid {
 
                         if (!interacted) {
                             interacted = true;
-                            // sounds.music.play();
+                            sounds.music.play();
                         }
 
                         return true;
