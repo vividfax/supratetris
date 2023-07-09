@@ -53,15 +53,31 @@ function preload() {
         sounds.rerollButton.push(new Audio("./sounds/reroll-button.wav"));
     }
 
-    sounds.completeShape = new Audio("./sounds/complete-shape.wav");
+    sounds.completeShape = [];
+    soundIndexes.completeShape = 0;
+    for (let i = 0; i < 6; i++) {
+        sounds.completeShape.push(new Audio("./sounds/complete-shape.wav"));
+    }
+
+    sounds.incompleteShape = [];
+    soundIndexes.incompleteShape = 0;
+    for (let i = 0; i < 6; i++) {
+        sounds.incompleteShape.push(new Audio("./sounds/incomplete-shape.wav"));
+    }
 
     sounds.selectBlock = [];
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 3; i++) {
         sounds.selectBlock.push(new Audio("./sounds/select-block-"+i+".wav"));
     }
 
-    sounds.music = new Audio("./sounds/fudge-music.ogg");
-    sounds.music.loop = true;
+    sounds.deselectBlock = [];
+    soundIndexes.deselectBlock = 0;
+    for (let i = 0; i < 6; i++) {
+        sounds.deselectBlock.push(new Audio("./sounds/deselect-block.wav"));
+    }
+
+    // sounds.music = new Audio("./sounds/fudge-music.ogg");
+    // sounds.music.loop = true;
 }
 
 function setup() {
@@ -381,7 +397,7 @@ function mousePressed() {
         if (grid.validate()) {
             grid.dropSelected();
             grid.updateScore();
-            sounds.completeShape.play();
+            playSoundFromArray("completeShape");
         }
     }
 }
