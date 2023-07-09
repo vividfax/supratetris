@@ -159,10 +159,20 @@ class Grid {
 
                 if (this.grid[i][j].hover()) {
 
-                    if (numberSelected >= 4 && !this.grid[i][j].selected) return true;
+                    if (numberSelected >= 4 && !this.grid[i][j].selected) {
+                        return true;
+                    } else {
+                        this.grid[i][j].selected = !this.grid[i][j].selected;
+                        if (this.grid[i][j].selected) sounds.selectBlock[numberSelected].play();
+                        if (!this.grid[i][j].selected) sounds.selectBlock[numberSelected-1].play();
 
-                    this.grid[i][j].selected = !this.grid[i][j].selected;
-                    return true;
+                        if (!interacted) {
+                            interacted = true;
+                            sounds.music.play();
+                        }
+
+                        return true;
+                    }
                 }
             }
         }

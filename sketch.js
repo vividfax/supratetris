@@ -9,7 +9,7 @@ let palette = {
     "blacker": "#1B1924",
     "blackest": "#16151E",
     "mote": "#322C44",
-}
+};
 
 let grid;
 let targets = [];
@@ -21,8 +21,12 @@ let cellSize = 40;
 let score = -1;
 
 let images = {};
+let sounds = {};
+let soundIndexes = {};
 
 let fudgeFont;
+
+let interacted = false;
 
 function preload() {
 
@@ -42,6 +46,22 @@ function preload() {
     images.background = loadImage("./images/background.png");
 
     fudgeFont = loadFont("./fonts/DarumadropOne-Regular.ttf");
+
+    sounds.rerollButton = [];
+    soundIndexes.rerollButton = 0;
+    for (let i = 0; i < 6; i++) {
+        sounds.rerollButton.push(new Audio("./sounds/reroll-button.wav"));
+    }
+
+    sounds.completeShape = new Audio("./sounds/complete-shape.wav");
+
+    sounds.selectBlock = [];
+    for (let i = 1; i <= 4; i++) {
+        sounds.selectBlock.push(new Audio("./sounds/select-block-"+i+".wav"));
+    }
+
+    sounds.music = new Audio("./sounds/fudge-music.ogg");
+    sounds.music.loop = true;
 }
 
 function setup() {
@@ -361,6 +381,7 @@ function mousePressed() {
         if (grid.validate()) {
             grid.dropSelected();
             grid.updateScore();
+            sounds.completeShape.play();
         }
     }
 }
@@ -379,4 +400,14 @@ function respin() {
     }
     grid.addNewRow();
     grid.clearSelected();
+
+    playSoundFromArray("rerollButton");
+}
+
+function playSoundFromArray(name) {
+
+    sounds[name][soundIndexes[name]].play();
+    soundIndexes[name]++;
+    if (soundIndexes[name] >= sounds[name].length) soundIndexes[name] = 0;
+    return soundIndexes[name];
 }
