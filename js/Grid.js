@@ -27,7 +27,7 @@ class Grid {
         let lastRow = [];
 
         for (let i = 0; i < this.w; i++) {
-            if (i > this.w*0.6) lastRow.push(true);
+            if (i > this.w*0.55) lastRow.push(true);
             else lastRow.push(false);
         }
 

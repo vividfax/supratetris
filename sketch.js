@@ -35,13 +35,13 @@ function preload() {
     images.tile.deselected = loadImage("./images/tile-deselected.png");
     images.tile.selected = loadImage("./images/tile-selected.png");
 
-    images.tile.blue = loadImage("./images/tile-blue.png");
-    images.tile.cyan = loadImage("./images/tile-cyan.png");
-    images.tile.green = loadImage("./images/tile-green.png");
-    images.tile.orange = loadImage("./images/tile-orange.png");
-    images.tile.purple = loadImage("./images/tile-purple.png");
-    images.tile.red = loadImage("./images/tile-red.png");
-    images.tile.yellow = loadImage("./images/tile-yellow.png");
+    images.tile.blue = loadImage("./images/tile-cyan.png");
+    images.tile.cyan = loadImage("./images/tile-green.png");
+    images.tile.green = loadImage("./images/tile-orange.png");
+    images.tile.orange = loadImage("./images/tile-purple.png");
+    images.tile.purple = loadImage("./images/tile-red.png");
+    images.tile.red = loadImage("./images/tile-yellow.png");
+    images.tile.yellow = loadImage("./images/tile-blue.png");
 
     images.background = loadImage("./images/background.png");
 
@@ -50,30 +50,30 @@ function preload() {
     sounds.rerollButton = [];
     soundIndexes.rerollButton = 0;
     for (let i = 0; i < 6; i++) {
-        sounds.rerollButton.push(new Audio("./sounds/reroll-button.wav"));
+        sounds.rerollButton.push(new Audio("./sounds/reroll-button.ogg"));
     }
 
     sounds.completeShape = [];
     soundIndexes.completeShape = 0;
     for (let i = 0; i < 6; i++) {
-        sounds.completeShape.push(new Audio("./sounds/complete-shape.wav"));
+        sounds.completeShape.push(new Audio("./sounds/complete-shape.ogg"));
     }
 
     sounds.incompleteShape = [];
     soundIndexes.incompleteShape = 0;
     for (let i = 0; i < 6; i++) {
-        sounds.incompleteShape.push(new Audio("./sounds/incomplete-shape.wav"));
+        sounds.incompleteShape.push(new Audio("./sounds/incomplete-shape.ogg"));
     }
 
     sounds.selectBlock = [];
     for (let i = 1; i <= 3; i++) {
-        sounds.selectBlock.push(new Audio("./sounds/select-block-"+i+".wav"));
+        sounds.selectBlock.push(new Audio("./sounds/select-block-"+i+".ogg"));
     }
 
     sounds.deselectBlock = [];
     soundIndexes.deselectBlock = 0;
     for (let i = 0; i < 6; i++) {
-        sounds.deselectBlock.push(new Audio("./sounds/deselect-block.wav"));
+        sounds.deselectBlock.push(new Audio("./sounds/deselect-block.ogg"));
     }
 
     sounds.music = new Audio("./sounds/music.ogg");
